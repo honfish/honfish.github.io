@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>JDK绿色版制作</title>
+      <link href="/article/7d6d36a6.html"/>
+      <url>/article/7d6d36a6.html</url>
+      
+        <content type="html"><![CDATA[<p>JDK绿色版即解压版，免除安装。</p><a id="more"></a><h4 id="1-下载官网EXE版本的jdk安装包"><a href="#1-下载官网EXE版本的jdk安装包" class="headerlink" title="1. 下载官网EXE版本的jdk安装包"></a>1. 下载官网EXE版本的jdk安装包</h4><h4 id="2-提取JDK文件"><a href="#2-提取JDK文件" class="headerlink" title="2. 提取JDK文件"></a>2. 提取JDK文件</h4><hr><p>以下为JDK1.8的提取方式，不同版本路径有所不同。</p><p>1、使用7-ZIP压缩工具打开EXE文件。</p><p>2、找到JDK文件的目录。</p><p>　　　　1). JDK1.8 32位的目录为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdk-8u161-windows-i586.exe\tools.zip</span><br></pre></td></tr></table></figure><p>　　　　2). JDK1.8 64位的目录为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdk-8u161-windows-x64.exe\.rsrc\1033\JAVA_CAB10\111\tools.zip</span><br></pre></td></tr></table></figure><p>　　　　熟悉JDK程序目录的朋友，应该可以认出，这个目录下的文件就是JDK的文件了。</p><p>3、把上面目录的文件解压出来。</p><p>4、解压.pack文件 以管理员的身份运行CMD窗口，打开第3步提取文件的目录，输入如下命令。    </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for &#x2F;r %x in (*.pack) do .\bin\unpack200 -r &quot;%x&quot; &quot;%~dx%~px%~nx.jar</span><br></pre></td></tr></table></figure><p>　　　　上面命令的作用是，使用unpack200这个程序，把*.pack的文件解压为.jar的文件。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JAVA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JAVA </tag>
+            
+            <tag> JDK </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JAVA环境配置</title>
+      <link href="/article/18c9dfa.html"/>
+      <url>/article/18c9dfa.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-右击-此电脑→属性→高级系统设置（窗口中）→高级（窗口中）→环境变量"><a href="#1-右击-此电脑→属性→高级系统设置（窗口中）→高级（窗口中）→环境变量" class="headerlink" title="1.右击 此电脑→属性→高级系统设置（窗口中）→高级（窗口中）→环境变量"></a>1.右击 此电脑→属性→高级系统设置（窗口中）→高级（窗口中）→环境变量</h3><img src="https://cdn.jsdelivr.net/gh/honfish/honfish.github.io@master/img/clip_image002-1585559081408.jpg" style="zoom:80%;" /><a id="more"></a><h5 id="2-只需要在系统变量上编辑就行。"><a href="#2-只需要在系统变量上编辑就行。" class="headerlink" title="2.只需要在系统变量上编辑就行。"></a>2.只需要在系统变量上编辑就行。</h5><p>-————————————————————————————————————————</p><img src="https://cdn.jsdelivr.net/gh/honfish/honfish.github.io@master/img/clip_image004-1585559081409.jpg" /><h5 id="3-新建环境变量JAVA-HOME"><a href="#3-新建环境变量JAVA-HOME" class="headerlink" title="3.新建环境变量JAVA_HOME"></a>3.新建环境变量JAVA_HOME</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量名：JAVA_HOME</span><br><span class="line">变量值：C:\Program Files\Java\jdk1.8.0_152</span><br></pre></td></tr></table></figure><p><strong>【变量值是自己的jdk安装目录】</strong></p><p>如图示：</p><img src="https://cdn.jsdelivr.net/gh/honfish/honfish.github.io@master/img/clip_image006-1585559081409.jpg" style="zoom:80%;" /><p>-————————————————————————————————————————</p><h5 id="4-新建环境变量CLASSPATH"><a href="#4-新建环境变量CLASSPATH" class="headerlink" title="4.新建环境变量CLASSPATH"></a>4.新建环境变量CLASSPATH</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量名：CLASSPATH</span><br><span class="line">变量值：**.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</span><br></pre></td></tr></table></figure><p><strong>需要注意变量值前面的“.;”</strong></p><p>如图示：</p><img src="https://cdn.jsdelivr.net/gh/honfish/honfish.github.io@master/img/clip_image008-1585559081409.jpg" style="zoom:80%;" /><p>-————————————————————————————————————————</p><h5 id="5-双击Path，点击新建，添加-JAVA-HOME-bin"><a href="#5-双击Path，点击新建，添加-JAVA-HOME-bin" class="headerlink" title="5.双击Path，点击新建，添加  %JAVA_HOME%\bin"></a>5.双击Path，点击新建，添加  %JAVA_HOME%\bin</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">再次点击新建，添加  %JAVA_HOME%\jre\bin</span><br></pre></td></tr></table></figure><p>【注意】，win10环境变量值是一行一行的，上述需要新建两行，不能放在一行。</p><p>如图示：</p><img src="https://cdn.jsdelivr.net/gh/honfish/honfish.github.io@master/img/clip_image010-1585559081409.jpg" style="zoom:80%;" /><p>-———————————————————————————————————————–</p><h5 id="6-cmd命令窗口输入-javac，java-version-，java均能正常显示，则配置成功。"><a href="#6-cmd命令窗口输入-javac，java-version-，java均能正常显示，则配置成功。" class="headerlink" title="6.cmd命令窗口输入 javac，java -version ，java均能正常显示，则配置成功。"></a>6.cmd命令窗口输入 <strong>javac，java -version ，java</strong>均能正常显示，则配置成功。</h5>]]></content>
+      
+      
+      <categories>
+          
+          <category> JAVA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JAVA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Byte和bit的区别</title>
+      <link href="/article/56016024.html"/>
+      <url>/article/56016024.html</url>
+      
+        <content type="html"><![CDATA[<p>“B”不是最小的单位，“B”是Byte（比特）的意思，一个Byte等于8个bit（位），bit是最小的单位。<br>就好想你用宽带上网，1M、2M、10M、100M都是用bit来作为单位的，实际上以上的速度换算到B是都要除上8。<br>bit一般用于网络速度的描述和各种通信速度中。<br>Byte用于计算硬盘、内存的大小。</p><a id="more"></a><img src="https://cdn.jsdelivr.net/gh/honfish/honfish.github.io@master/img/7a8bd35a39388a5eaec484475527020e-1585557347179.png" /><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1B&#x3D;8bit</span><br><span class="line">1KB&#x3D;1024B</span><br><span class="line">1MB&#x3D;1024KB</span><br><span class="line">1GB&#x3D;1024M</span><br><span class="line">1TB&#x3D;1024GB</span><br></pre></td></tr></table></figure><p>它们的换算是2的10次方，但是我们买硬盘和内存是厂家都是以1000来算的。所以用电脑看出的硬盘大小要比标注的大小要小。<br>一个字节可以表示1个汉字或者2个英文字母”的说法是完全错误的。<br>1bit是代表2种电平0或1，一个英文字母要8个BIT才能表示（例如A是40H，也就是用01000000表示），一个汉字要16个BIT来表示。8个BIT才是一个字节。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机组成原理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机组成原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
